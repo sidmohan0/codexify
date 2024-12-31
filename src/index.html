@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Codexify | AI-powered file search</title>
+
+    <!-- Load styles -->
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Load the client script -->
+    <script src="./client.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Codexify</h1>
+        <h2>AI-powered file search</h2>
+        
+        <!-- Add the ImageScanner component here, before or after search section -->
+        <div id="imageScannerRoot"></div>
+
+        <!-- Search section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input id="searchInput" placeholder="Search your collections...">
+                <select id="collectionSelect">
+                    <option value="">All Collections</option>
+                </select>
+            </div>
+            <div id="searchResults" class="search-results">
+                <!-- Results will be inserted here -->
+            </div>
+        </div>
+
+        <!-- New collections section -->
+        <div class="collections-section">
+            <div class="collections-header">
+                <h3>Collections</h3>
+                <div class="button-group">
+                    <button id="deleteButton" class="danger hidden">Delete Selected</button>
+                    <button id="editButton">Edit</button>
+                </div>
+            </div>
+
+            <div id="dropZone" class="drop-zone">
+                <p>Drag and drop files here</p>
+                <div id="fileList"></div>
+            </div>
+            
+            <div class="collection-input">
+                <input id="collectionName" placeholder="Enter collection name">
+                <button id="createButton">Create</button>
+            </div>
+
+            <table id="collectionsTable">
+                <thead>
+                    <tr>
+                        <th class="checkbox-column hidden">Select</th>
+                        <th>Name</th>
+                        <th>Created</th>
+                        <th># Text Chunks</th>
+                    </tr>
+                </thead>
+                <tbody id="collectionsBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add this before your client.js -->
+    <div id="root"></div>
+    <script type="module" src="./App.jsx"></script>
+</body>
+
+</html>
